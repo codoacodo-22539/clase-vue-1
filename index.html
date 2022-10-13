@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue 3</title>
+</head>
+
+<body>
+
+    <div id="app">
+        <h1>{{ message }}</h1>
+    </div>
+
+
+    <div id="ejemplo1">
+        <input type="text" v-bind:value="valorBind">
+        <p>{{valorBind}}</p>
+
+        <input type="text" v-model="valorModel">
+        <p>{{valorModel}}</p>
+    </div>
+
+
+    <div id="ejemplo2">
+        <h2>Alumno</h2>
+
+        <ul>
+            <li>Nombre: {{nombre}}</li>
+            <li>Apellido: {{ apellido }}</li>
+            <li>Edad: {{edad}}</li>
+        </ul>
+
+        <p>{{ nombreCompleto() }}</p>
+    </div>
+
+    <div id="ejemplo3">
+        <h2>Alumno</h2>
+
+        <ul>
+            <li>Nombre: {{nombre}}</li>
+            <li>Apellido: {{ apellido }}</li>
+            <li>Edad: {{edad}}</li>
+        </ul>
+
+        <div v-html="contenidoHtml"></div>
+        <img v-bind:src="imagenSrc" v-bind:alt="imagenAlt">
+    </div>
+
+    <div id="ejemplo4">
+        <custom-component></custom-component>
+    </div>
+
+
+    <div id="ejemplo5">
+        <custom-component-two></custom-component-two>
+    </div>
+
+
+    <div id="ejemplo6">
+        <h1>Accediendo al Dom usandando refs</h1>
+        <input type="text" ref="carrito">
+
+        <button type="button" @click="addItem">Agregar Item</button>
+        <button type="button" @click="removeItem">Eleminar Item</button>
+
+        <p ref="item"></p>
+
+    </div>
+
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="app.js"></script>
+    
+</body>
+
+</html>
